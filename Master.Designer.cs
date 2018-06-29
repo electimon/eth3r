@@ -142,6 +142,7 @@
             this.pictureBox2.Image = global::Eth3r.Properties.Resources.ic_more_vert_white_18dp;
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // pictureBox1
             // 

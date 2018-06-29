@@ -55,6 +55,7 @@
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.CFM.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -82,7 +83,8 @@
             // 
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Items.AddRange(new object[] {
-            resources.GetString("comboBox2.Items")});
+            resources.GetString("comboBox2.Items"),
+            resources.GetString("comboBox2.Items1")});
             resources.ApplyResources(this.comboBox2, "comboBox2");
             this.comboBox2.Name = "comboBox2";
             // 
@@ -223,15 +225,6 @@
             // 
             // CFM
             // 
-            resources.ApplyResources(this.CFM, "CFM");
-            this.CFM.Name = "CFM";
-            // 
-            // GenerateFirmware
-            // 
-            resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.WindowText;
-            this.Controls.Add(this.CFM);
             this.CFM.Controls.Add(this.pictureBox1);
             this.CFM.Controls.Add(this.comboBox1);
             this.CFM.Controls.Add(this.button3);
@@ -248,6 +241,15 @@
             this.CFM.Controls.Add(this.label1);
             this.CFM.Controls.Add(this.panel3);
             this.CFM.Controls.Add(this.panel4);
+            resources.ApplyResources(this.CFM, "CFM");
+            this.CFM.Name = "CFM";
+            // 
+            // GenerateFirmware
+            // 
+            resources.ApplyResources(this, "$this");
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.WindowText;
+            this.Controls.Add(this.CFM);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "GenerateFirmware";
@@ -257,6 +259,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.CFM.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

@@ -156,5 +156,11 @@ namespace Eth3r
             MessageBox.Show(output);
             */
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            GenerateFirmware gen = new GenerateFirmware();
+            gen.ShowDialog();
+        }
     }
 }

@@ -21,6 +21,7 @@ namespace Eth3r.Interfaces
         public string model;
         public string iosversion;
         public bool DeviceError = false;
+        public string build;
 
         public Device()
         {
@@ -51,6 +52,17 @@ namespace Eth3r.Interfaces
         {
             name= ExecuteCommand("c:/Eth3r/getinfo/name.bat");
 
+
+            
+
+
+
+
+
+
+
+
+
             if (name == "ERROR: Could not connect to device")
             {
                 MessageBox.Show("No device detected... did you plug it in?", "No device detected", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -73,6 +85,26 @@ namespace Eth3r.Interfaces
                 iosversion = ExecuteCommand("c:/Eth3r/getinfo/version.bat");
                 label4.Text = "iOS Version: " + iosversion;
             }
+        }
+
+        private void comboBox1_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            string selected = this.comboBox1.GetItemText(this.comboBox1.SelectedItem);
+            MessageBox.Show(selected);
+
+            if (selected == "test")
+            {
+                build = "yes";
+            }
+            else if (selected == "tom")
+            {
+                build = "no";
+            }
+            else if (selected == "noah")
+            {
+                build = "maybe";
+            }
+            MessageBox.Show(build);
         }
     }
 }

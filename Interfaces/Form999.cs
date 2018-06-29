@@ -154,11 +154,17 @@ namespace Eth3r
             {
                 if (iosversion == "6.1.3")
                 {
-                    bool doCustomStrings = true;
                     rootfskey = "4bcdd29f167775f32fd7c6bfec2e1f2ffec9b8d7bf72832092a8be71501e347c459e9bc5";
                     buildid = "10B329";
                     rootfs = "048-2484-005.dmg";
                     updateRamdisk = "048-2506-005.dmg";
+                }
+                if (iosversion == "6.1")
+                {
+                    rootfskey = "key";
+                    buildid = "build";
+                    rootfs = "rootfsname";
+                    updateRamdisk = "ramdisk";
                 }
             }
 
@@ -202,7 +208,10 @@ namespace Eth3r
 
                 LineChanger("\"AWAY_LOCK_LABEL\" = \"" + CustomSlide + "\";", instDir + "/SpringBoard.strings", 1);
                 LineChanger("\"AWAY_LOCK_BUDDY_LABEL\" = \"" + CustomSlide + "\";" , instDir + "/SpringBoard.strings", 5);
-                    
+
+
+                MessageBox.Show(rootfskey + " " + rootfs + " " + buildid + " " + updateRamdisk);
+
 
 
                 richTextBox1.Text += Environment.NewLine;

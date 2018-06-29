@@ -85,11 +85,11 @@
     <Compile Include="Interfaces\CFM.Designer.cs">
       <DependentUpon>CFM.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\Form1.cs">
+    <Compile Include="Interfaces\Form999.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaces\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Interfaces\Form999.Designer.cs">
+      <DependentUpon>Form999.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\Form2.cs">
       <SubType>Form</SubType>
@@ -156,8 +156,8 @@
     <EmbeddedResource Include="Interfaces\CFM.resx">
       <DependentUpon>CFM.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaces\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Interfaces\Form999.resx">
+      <DependentUpon>Form999.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
