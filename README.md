@@ -1,3 +1,11 @@
+
+# EDIT: MOVING TO [HERE](https://github.com/Tom-ODonnell/Eth3r), where development will continue under new hands.
+
+*****
+*****
+*****
+
+
 ![Eth3r Logo](https://raw.githubusercontent.com/TKO-Cuber/eth3r/master/Branding/ColorLogoNoIcon.png)
 
 # Eth3r [![Build Status](https://travis-ci.org/TKO-Cuber/eth3r.svg?branch=master)](https://travis-ci.org/TKO-Cuber/eth3r)
