@@ -1,0 +1,111 @@
+#!/bin/bash
+function jumpto
+{
+    label=$1
+    cmd=$(sed -n "/$label:/{:a;n;p;ba};" $0 | grep -v ':$')
+    eval "$cmd"
+    exit
+}
+
+start=${1:-"start"}
+
+jumpto $start
+
+start:
+clear
+echo " "
+echo " "
+echo '                  _______ _________          _______  _______ '
+echo '           (  ____ \\__   __/|\     /|(  ____ \(  ____ )'
+echo '           | (    \/   ) (   | )   ( || (    \/| (    ||'
+echo '                   | (__       | |   | (___) || (__    | (____)|'
+echo '           |  __)      | |   |  ___  ||  __)   |     __)'
+echo '                 | (         | |   | (   ) || (      | (\ (   '
+echo '           | (____/\   | |   | )   ( || (____/\| ) \ \__'
+echo '           (_______/   )_(   |/     \|(_______/|/   \__/'
+echo " "
+echo " "
+echo " "
+echo '                                  by Electimon '
+echo " "
+echo " "
+echo " "
+echo '                                  Linux Beta '
+echo '                                 Version 0.0.2 '
+echo " "
+echo " "
+read -rsp $'Press any key to begin.....\n' -n1 key
+clear
+echo " "
+echo " "
+echo '                  _______ _________          _______  _______ '
+echo '	  	 (  ____ \\__   __/|\     /|(  ____ \(  ____ )'
+echo '		 | (    \/   ) (   | )   ( || (    \/| (    ||'
+echo '  		 | (__       | |   | (___) || (__    | (____)|'
+echo '	         |  __)      | |   |  ___  ||  __)   |     __)'
+echo '                 | (         | |   | (   ) || (      | (\ (   '
+echo '	         | (____/\   | |   | )   ( || (____/\| ) \ \__'
+echo '		 (_______/   )_(   |/     \|(_______/|/   \__/'
+echo " "
+echo " "
+echo " "
+echo "                    What would you like to do today? "
+echo " "
+echo "		[1] Pwn DFU "
+echo "		[2] Pwn BootROM "
+echo " "
+echo " "
+read mode
+
+if [[ "$mode" == "1" ]]; then
+	clear
+	echo "Pwning DFU..."
+	echo " "
+	sudo ./Files/xpwndfu/ipwndfu/ipwndfu -p
+	didthis="1"
+	echo " "
+	echo " "
+	echo "Done, if you see errors bug report them!"
+	sleep 3
+	jumpto start
+fi
+
+if [[ "$mode" == "2" ]]; then
+	clear
+	if [ "$didthis" = "1" ]; then
+	echo "Pwning BootROM"
+	echo " "
+	sudo ./Files/xpwndfu/ipwndfu/ipwndfu -x
+	echo " "
+	echo " "
+	echo "yes"
+	else
+	echo "Pwning BootROM"
+	echo " "
+	sudo ./Files/xpwndfu/ipwndfu/ipwndfu -p
+	sudo ./Files/xpwndfu/ipwndfu/ipwndfu -x
+	echo " "
+	echo " "
+	echo "no"
+	fi
+	unset didthis
+fi
+
+if [ "$mode" = "2" ]; then
+		echo " "
+		echo "Thank you for using Eth3r! "
+		echo " "
+		sleep 1
+		read -rsp $'Press any key to exit....\n' -n1 key
+		exit
+fi
+
+if [[ ! -e Files/inst_done ]]; then
+
+echo "Installing required software, exit now (Ctrl-C) or press enter to start."
+read -rsp $'Press any key to continue.....\n' -n1 key
+bash ./Files/dep
+echo "" > Files/inst_done
+fi
+clear
+
