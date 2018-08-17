@@ -1,1 +1,0 @@
-7za.exe x -oIPSW "C:\Users\yello\OneDrive\Documents\iPhone2,1_6.1.3_10B329_Restore.ipsw"
